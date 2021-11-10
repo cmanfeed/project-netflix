@@ -1,0 +1,15 @@
+version: '3'
+services:
+  netflixcli:
+    image: postgres:alpine
+    ports:
+      - '5440:5440'
+    container_name: 'netflixcli'
+    restart: always
+    volumes:
+      - netflixcli-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: caiom
+      POSTGRES_PASSWORD: caiopassword
+volumes:
+  netflixcli-data:
